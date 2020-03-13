@@ -1,0 +1,35 @@
+I"d<h1 id="foobaras">Foobaras</h1>
+
+<p>Foobar is a Python library for dealing with word pluralization.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>F1</th>
+      <th>F1 (surface form)</th>
+      <th>Paper / Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Flair embeddings (Akbik et al., 2018)</td>
+      <td>49.59</td>
+      <td> </td>
+      <td><a href="http://alanakbik.github.io/papers/naacl2019_embeddings.pdf">Pooled Contextualized Embeddings for Named Entity Recognition</a> / <a href="https://github.com/zalandoresearch/flair">Flair framework</a></td>
+    </tr>
+    <tr>
+      <td>Aguilar et al. (2018)</td>
+      <td>45.55</td>
+      <td> </td>
+      <td><a href="http://aclweb.org/anthology/N18-1127.pdf">Modeling Noisiness to Recognize Named Entities using Multitask Neural Networks on Social Media</a></td>
+    </tr>
+    <tr>
+      <td>SpinningBytes</td>
+      <td>40.78</td>
+      <td>39.33</td>
+      <td><a href="http://aclweb.org/anthology/W17-4422.pdf">Transfer Learning and Sentence Level Features for Named Entity Recognition on Tweets</a></td>
+    </tr>
+  </tbody>
+</table>
+:ET

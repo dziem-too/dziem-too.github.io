@@ -1,0 +1,304 @@
+I"�4<h1 id="named-entity-recognition">Named entity recognition</h1>
+
+<p>Named entity recognition (NER) is the task of tagging entities in text with their corresponding type.
+Approaches typically use BIO notation, which differentiates the beginning (B) and the inside (I) of entities.
+O is used for non-entity tokens.</p>
+
+<p>Example:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mark</th>
+      <th>Watney</th>
+      <th>visited</th>
+      <th>Mars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>B-PER</td>
+      <td>I-PER</td>
+      <td>O</td>
+      <td>B-LOC</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="conll-2003-english">CoNLL 2003 (English)</h3>
+
+<p>The <a href="http://www.aclweb.org/anthology/W03-0419.pdf">CoNLL 2003 NER task</a> consists of newswire text from the Reuters RCV1 
+corpus tagged with four different entity types (PER, LOC, ORG, MISC). Models are evaluated based on span-based F1 on the test set. ♦ used both the train and development splits for training.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th style="text-align: center">F1</th>
+      <th>Paper / Source</th>
+      <th>Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CNN Large + fine-tune (Baevski et al., 2019)</td>
+      <td style="text-align: center">93.5</td>
+      <td><a href="https://arxiv.org/pdf/1903.07785.pdf">Cloze-driven Pretraining of Self-attention Networks</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RNN-CRF+Flair</td>
+      <td style="text-align: center">93.47</td>
+      <td><a href="https://www.aclweb.org/anthology/D19-1367/">Improved Differentiable Architecture Search for Language Modeling and Named Entity Recognition</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LSTM-CRF+ELMo+BERT+Flair</td>
+      <td style="text-align: center">93.38</td>
+      <td><a href="https://www.aclweb.org/anthology/P19-1527/">Neural Architectures for Nested NER through Linearization</a></td>
+      <td><a href="https://github.com/ufal/acl2019_nested_ner">Official</a></td>
+    </tr>
+    <tr>
+      <td>Flair embeddings (Akbik et al., 2018)♦</td>
+      <td style="text-align: center">93.09</td>
+      <td><a href="https://drive.google.com/file/d/17yVpFA7MmXaQFTe-HDpZuqw9fJlmzg56/view">Contextual String Embeddings for Sequence Labeling</a></td>
+      <td><a href="https://github.com/zalandoresearch/flair">Flair framework</a></td>
+    </tr>
+    <tr>
+      <td>BERT Large (Devlin et al., 2018)</td>
+      <td style="text-align: center">92.8</td>
+      <td><a href="https://arxiv.org/abs/1810.04805">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CVT + Multi-Task (Clark et al., 2018)</td>
+      <td style="text-align: center">92.61</td>
+      <td><a href="https://arxiv.org/abs/1809.08370">Semi-Supervised Sequence Modeling with Cross-View Training</a></td>
+      <td><a href="https://github.com/tensorflow/models/tree/master/research/cvt_text">Official</a></td>
+    </tr>
+    <tr>
+      <td>BERT Base (Devlin et al., 2018)</td>
+      <td style="text-align: center">92.4</td>
+      <td><a href="https://arxiv.org/abs/1810.04805">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>BiLSTM-CRF+ELMo (Peters et al., 2018)</td>
+      <td style="text-align: center">92.22</td>
+      <td><a href="https://arxiv.org/abs/1802.05365">Deep contextualized word representations</a></td>
+      <td><a href="https://allennlp.org/elmo">AllenNLP Project</a> <a href="https://github.com/allenai/allennlp">AllenNLP GitHub</a></td>
+    </tr>
+    <tr>
+      <td>Peters et al. (2017) ♦</td>
+      <td style="text-align: center">91.93</td>
+      <td><a href="https://arxiv.org/abs/1705.00108">Semi-supervised sequence tagging with bidirectional language models</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CRF + AutoEncoder (Wu et al., 2018)</td>
+      <td style="text-align: center">91.87</td>
+      <td><a href="http://aclweb.org/anthology/D18-1310">Evaluating the Utility of Hand-crafted Features in Sequence Labelling</a></td>
+      <td><a href="https://github.com/minghao-wu/CRF-AE">Official</a></td>
+    </tr>
+    <tr>
+      <td>Bi-LSTM-CRF + Lexical Features (Ghaddar and Langlais 2018)</td>
+      <td style="text-align: center">91.73</td>
+      <td><a href="https://arxiv.org/pdf/1806.03489.pdf">Robust Lexical Features for Improved Neural Network Named-Entity Recognition</a></td>
+      <td><a href="https://github.com/ghaddarAbs/NER-with-LS">Official</a></td>
+    </tr>
+    <tr>
+      <td>BiLSTM-CRF + IntNet (Xin et al., 2018)</td>
+      <td style="text-align: center">91.64</td>
+      <td><a href="https://www.aclweb.org/anthology/D18-1279">Learning Better Internal Structure of Words for Sequence Labeling</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Chiu and Nichols (2016) ♦</td>
+      <td style="text-align: center">91.62</td>
+      <td><a href="https://arxiv.org/abs/1511.08308">Named entity recognition with bidirectional LSTM-CNNs</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>HSCRF (Ye and Ling, 2018)</td>
+      <td style="text-align: center">91.38</td>
+      <td><a href="http://aclweb.org/anthology/P18-2038">Hybrid semi-Markov CRF for Neural Sequence Labeling</a></td>
+      <td><a href="https://github.com/ZhixiuYe/HSCRF-pytorch">HSCRF</a></td>
+    </tr>
+    <tr>
+      <td>IXA pipes (Agerri and Rigau 2016)</td>
+      <td style="text-align: center">91.36</td>
+      <td><a href="https://doi.org/10.1016/j.artint.2016.05.003">Robust multilingual Named Entity Recognition with shallow semi-supervised features</a></td>
+      <td><a href="https://github.com/ixa-ehu/ixa-pipe-nerc">Official</a></td>
+    </tr>
+    <tr>
+      <td>NCRF++ (Yang and Zhang, 2018)</td>
+      <td style="text-align: center">91.35</td>
+      <td><a href="http://www.aclweb.org/anthology/P18-4013">NCRF++: An Open-source Neural Sequence Labeling Toolkit</a></td>
+      <td><a href="https://github.com/jiesutd/NCRFpp">NCRF++</a></td>
+    </tr>
+    <tr>
+      <td>LM-LSTM-CRF (Liu et al., 2018)</td>
+      <td style="text-align: center">91.24</td>
+      <td><a href="https://arxiv.org/pdf/1709.04109.pdf">Empowering Character-aware Sequence Labeling with Task-Aware Neural Language Model</a></td>
+      <td><a href="https://github.com/LiyuanLucasLiu/LM-LSTM-CRF">LM-LSTM-CRF</a></td>
+    </tr>
+    <tr>
+      <td>Yang et al. (2017) ♦</td>
+      <td style="text-align: center">91.26</td>
+      <td><a href="https://arxiv.org/abs/1703.06345">Transfer Learning for Sequence Tagging with Hierarchical Recurrent Networks</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Ma and Hovy (2016)</td>
+      <td style="text-align: center">91.21</td>
+      <td><a href="https://arxiv.org/abs/1603.01354">End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LSTM-CRF (Lample et al., 2016)</td>
+      <td style="text-align: center">90.94</td>
+      <td><a href="https://arxiv.org/abs/1603.01360">Neural Architectures for Named Entity Recognition</a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="long-tail-emerging-entities">Long-tail emerging entities</h3>
+
+<p>The <a href="http://aclweb.org/anthology/W17-4418">WNUT 2017 Emerging Entities task</a> operates over a wide range of English 
+text and focuses on generalisation beyond memorisation in high-variance environments. Scores are given both over
+entity chunk instances, and unique entity surface forms, to normalise the biasing impact of entities that occur frequently.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Train</th>
+      <th>Dev</th>
+      <th>Test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Posts</td>
+      <td>3,395</td>
+      <td>1,009</td>
+      <td>1,287</td>
+    </tr>
+    <tr>
+      <td>Tokens</td>
+      <td>62,729</td>
+      <td>15,733</td>
+      <td>23,394</td>
+    </tr>
+    <tr>
+      <td>NE tokens</td>
+      <td>3,160</td>
+      <td>1,250</td>
+      <td>1,589</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The data is annotated for six classes - person, location, group, creative work, product and corporation.</p>
+
+<p>Links: <a href="https://noisy-text.github.io/2017/emerging-rare-entities.html">WNUT 2017 Emerging Entity task page</a> (including direct download links for data and scoring script)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>F1</th>
+      <th>F1 (surface form)</th>
+      <th>Paper / Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Flair embeddings (Akbik et al., 2018)</td>
+      <td>49.59</td>
+      <td> </td>
+      <td><a href="http://alanakbik.github.io/papers/naacl2019_embeddings.pdf">Pooled Contextualized Embeddings for Named Entity Recognition</a> / <a href="https://github.com/zalandoresearch/flair">Flair framework</a></td>
+    </tr>
+    <tr>
+      <td>Aguilar et al. (2018)</td>
+      <td>45.55</td>
+      <td> </td>
+      <td><a href="http://aclweb.org/anthology/N18-1127.pdf">Modeling Noisiness to Recognize Named Entities using Multitask Neural Networks on Social Media</a></td>
+    </tr>
+    <tr>
+      <td>SpinningBytes</td>
+      <td>40.78</td>
+      <td>39.33</td>
+      <td><a href="http://aclweb.org/anthology/W17-4422.pdf">Transfer Learning and Sentence Level Features for Named Entity Recognition on Tweets</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ontonotes-v5-english">Ontonotes v5 (English)</h3>
+
+<p>The <a href="https://catalog.ldc.upenn.edu/docs/LDC2013T19/OntoNotes-Release-5.0.pdf">Ontonotes corpus v5</a> is a richly annotated corpus with several layers of annotation, including named entities, coreference, part of speech, word sense, propositions, and syntactic parse trees. These annotations are over a large number of tokens, a broad cross-section of domains, and 3 languages (English, Arabic, and Chinese). The NER dataset (of interest here) includes 18 tags, consisting of 11 <em>types</em> (PERSON, ORGANIZATION, etc) and 7 <em>values</em> (DATE, PERCENT, etc), and contains 2 million tokens. The common datasplit used in NER is defined in <a href="https://www.semanticscholar.org/paper/Towards-Robust-Linguistic-Analysis-using-OntoNotes-Pradhan-Moschitti/a94e4fe6f475e047be5dcc9077f445e496240852">Pradhan et al 2013</a> and can be found <a href="http://cemantix.org/data/ontonotes.html">here</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th style="text-align: center">F1</th>
+      <th>Paper / Source</th>
+      <th>Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Flair embeddings (Akbik et al., 2018)</td>
+      <td style="text-align: center">89.71</td>
+      <td><a href="http://aclweb.org/anthology/C18-1139">Contextual String Embeddings for Sequence Labeling</a></td>
+      <td><a href="https://github.com/zalandoresearch/flair">Official</a></td>
+    </tr>
+    <tr>
+      <td>CVT + Multi-Task (Clark et al., 2018)</td>
+      <td style="text-align: center">88.81</td>
+      <td><a href="https://arxiv.org/abs/1809.08370">Semi-Supervised Sequence Modeling with Cross-View Training</a></td>
+      <td><a href="https://github.com/tensorflow/models/tree/master/research/cvt_text">Official</a></td>
+    </tr>
+    <tr>
+      <td>Bi-LSTM-CRF + Lexical Features (Ghaddar and Langlais 2018)</td>
+      <td style="text-align: center">87.95</td>
+      <td><a href="https://arxiv.org/pdf/1806.03489.pdf">Robust Lexical Features for Improved Neural Network Named-Entity Recognition</a></td>
+      <td><a href="https://github.com/ghaddarAbs/NER-with-LS">Official</a></td>
+    </tr>
+    <tr>
+      <td>BiLSTM-CRF (Strubell et al, 2017)</td>
+      <td style="text-align: center">86.99</td>
+      <td><a href="https://arxiv.org/pdf/1702.02098.pdf">Fast and Accurate Entity Recognition with Iterated Dilated Convolutions</a></td>
+      <td><a href="https://github.com/iesl/dilated-cnn-ner">Official</a></td>
+    </tr>
+    <tr>
+      <td>Iterated Dilated CNN (Strubell et al, 2017)</td>
+      <td style="text-align: center">86.84</td>
+      <td><a href="https://arxiv.org/pdf/1702.02098.pdf">Fast and Accurate Entity Recognition with Iterated Dilated Convolutions</a></td>
+      <td><a href="https://github.com/iesl/dilated-cnn-ner">Official</a></td>
+    </tr>
+    <tr>
+      <td>Chiu and Nichols (2016)</td>
+      <td style="text-align: center">86.28</td>
+      <td><a href="https://arxiv.org/abs/1511.08308">Named entity recognition with bidirectional LSTM-CNNs</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Joint Model (Durrett and Klein 2014)</td>
+      <td style="text-align: center">84.04</td>
+      <td><a href="https://pdfs.semanticscholar.org/2eaf/f2205c56378e715d8d12c521d045c0756a76.pdf">A Joint Model for Entity Analysis: Coreference, Typing, and Linking</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Averaged Perceptron (Ratinov and Roth 2009)</td>
+      <td style="text-align: center">83.45</td>
+      <td><a href="https://www.semanticscholar.org/paper/Design-Challenges-and-Misconceptions-in-Named-Ratinov-Roth/27496a2ee337db705e7c611dea1fd8e6f41437c2">Design Challenges and Misconceptions in Named Entity Recognition</a> (These scores reported in (<a href="https://pdfs.semanticscholar.org/2eaf/f2205c56378e715d8d12c521d045c0756a76.pdf">Durrett and Klein 2014</a>))</td>
+      <td><a href="https://github.com/CogComp/cogcomp-nlp/tree/master/ner">Official</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="../README.md">Go back to the README</a></p>
+:ET

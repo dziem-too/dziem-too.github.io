@@ -1,0 +1,107 @@
+I"Z<h1 id="tracking-progress-in-natural-language-processing">Tracking Progress in Natural Language Processing</h1>
+
+<h2 id="table-of-contents">Table of contents</h2>
+
+<h3 id="english">English</h3>
+
+<ul>
+  <li><a href="english/automatic_speech_recognition.md">Automatic speech recognition</a></li>
+  <li><a href="english/ccg.md">CCG</a></li>
+  <li><a href="english/common_sense.md">Common sense</a></li>
+  <li><a href="english/constituency_parsing.md">Constituency parsing</a></li>
+  <li><a href="english/coreference_resolution.md">Coreference resolution</a></li>
+  <li><a href="english/dependency_parsing.md">Dependency parsing</a></li>
+  <li><a href="english/dialogue.md">Dialogue</a></li>
+  <li><a href="english/domain_adaptation.md">Domain adaptation</a></li>
+  <li><a href="english/entity_linking.md">Entity linking</a></li>
+  <li><a href="english/grammatical_error_correction.md">Grammatical error correction</a></li>
+  <li><a href="english/information_extraction.md">Information extraction</a></li>
+  <li><a href="english/language_modeling.md">Language modeling</a></li>
+  <li><a href="english/lexical_normalization.md">Lexical normalization</a></li>
+  <li><a href="english/machine_translation.md">Machine translation</a></li>
+  <li><a href="english/missing_elements.md">Missing elements</a></li>
+  <li><a href="english/multi-task_learning.md">Multi-task learning</a></li>
+  <li><a href="english/multimodal.md">Multi-modal</a></li>
+  <li><a href="english/named_entity_recognition.md">Named entity recognition</a></li>
+  <li><a href="english/natural_language_inference.md">Natural language inference</a></li>
+  <li><a href="english/part-of-speech_tagging.md">Part-of-speech tagging</a></li>
+  <li><a href="english/question_answering.md">Question answering</a></li>
+  <li><a href="english/relation_prediction.md">Relation prediction</a></li>
+  <li><a href="english/relationship_extraction.md">Relationship extraction</a></li>
+  <li><a href="english/semantic_textual_similarity.md">Semantic textual similarity</a></li>
+  <li><a href="english/semantic_parsing.md">Semantic parsing</a></li>
+  <li><a href="english/semantic_role_labeling.md">Semantic role labeling</a></li>
+  <li><a href="english/sentiment_analysis.md">Sentiment analysis</a></li>
+  <li><a href="english/shallow_syntax.md">Shallow syntax</a></li>
+  <li><a href="english/simplification.md">Simplification</a></li>
+  <li><a href="english/intent_detection_slot_filling.md">Intent Detection and Slot Filling</a></li>
+  <li><a href="english/stance_detection.md">Stance detection</a></li>
+  <li><a href="english/summarization.md">Summarization</a></li>
+  <li><a href="english/taxonomy_learning.md">Taxonomy learning</a></li>
+  <li><a href="english/temporal_processing.md">Temporal processing</a></li>
+  <li><a href="english/text_classification.md">Text classification</a></li>
+  <li><a href="english/word_sense_disambiguation.md">Word sense disambiguation</a></li>
+</ul>
+
+<h3 id="vietnamese">Vietnamese</h3>
+
+<ul>
+  <li><a href="vietnamese/vietnamese.md#dependency-parsing">Dependency parsing</a></li>
+  <li><a href="vietnamese/vietnamese.md#machine-translation">Machine translation</a></li>
+  <li><a href="vietnamese/vietnamese.md#named-entity-recognition">Named entity recognition</a></li>
+  <li><a href="vietnamese/vietnamese.md#part-of-speech-tagging">Part-of-speech tagging</a></li>
+  <li><a href="vietnamese/vietnamese.md#word-segmentation">Word segmentation</a></li>
+</ul>
+
+<h3 id="hindi">Hindi</h3>
+
+<ul>
+  <li><a href="hindi/hindi.md#chunking">Chunking</a></li>
+  <li><a href="hindi/hindi.md#part-of-speech-tagging">Part-of-speech tagging</a></li>
+  <li><a href="hindi/hindi.md#machine-translation">Machine Translation</a></li>
+</ul>
+
+<h3 id="chinese">Chinese</h3>
+
+<ul>
+  <li><a href="chinese/chinese.md#entity-linking">Entity linking</a></li>
+  <li><a href="chinese/chinese_word_segmentation.md">Chinese word segmentation</a></li>
+  <li><a href="chinese/question_answering.md">Question answering</a></li>
+</ul>
+
+<h3 id="french">French</h3>
+
+<ul>
+  <li><a href="french/question_answering.md">Question answering</a></li>
+</ul>
+
+<h3 id="russian">Russian</h3>
+
+<ul>
+  <li><a href="russian/question_answering.md">Question answering</a></li>
+</ul>
+
+<h3 id="spanish">Spanish</h3>
+
+<ul>
+  <li><a href="spanish/entity_linking.md#entity-linking">Entity linking</a></li>
+</ul>
+
+<h3 id="portuguese">Portuguese</h3>
+
+<ul>
+  <li><a href="portuguese/question_answering.md">Question Answering</a></li>
+</ul>
+
+<h3 id="korean">Korean</h3>
+
+<ul>
+  <li><a href="korean/question_answering.md">Question Answering</a></li>
+</ul>
+
+<h3 id="nepali">Nepali</h3>
+
+<ul>
+  <li><a href="nepali/nepali.md#machine-translation">Machine Translation</a></li>
+</ul>
+:ET
